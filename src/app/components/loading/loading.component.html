@@ -1,0 +1,6 @@
+
+@if (loading()) {
+    <p>...LOADING...</p>
+} @else {
+    <ng-container [ngTemplateOutlet]="template()"></ng-container>
+}

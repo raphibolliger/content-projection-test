@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { LoadingComponent } from './components/loading/loading.component';
+import { EmittingComponent } from './components/emitting/emitting.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, LoadingComponent, EmittingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'content-projection-test';
+  readonly loading: WritableSignal<boolean> = signal(true);
 }
